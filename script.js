@@ -1,36 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const day = new Date().getDay();
-    const date = new Date().getDate();
-    const month = new Date().getMonth();
-    const year = new Date().getFullYear().toString().slice(-2); // Get last two digits of the year
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    // Initial update when page loads
+    updateDateTime();
+    
+    // Update every second (1000 milliseconds)
+    setInterval(updateDateTime, 10000);
+    
+    function updateDateTime() {
+        const now = new Date();
+        const day = now.getDay();
+        const date = now.getDate();
+        const month = now.getMonth();
+        const year = now.getFullYear().toString().slice(-2);
+        const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    switch (day) {
-        case 0: var dayName = 'SUNDAY'; break;
-        case 1: var dayName = 'MONDAY'; break;
-        case 2: var dayName = 'TUESDAY'; break;
-        case 3: var dayName = 'WEDNESDAY'; break;
-        case 4: var dayName = 'THURSDAY'; break;
-        case 5: var dayName = 'FRIDAY'; break;
-        case 6: var dayName = 'SATURDAY'; break;
-    }
+        let dayName;
+        switch (day) {
+            case 0: dayName = 'SUNDAY'; break;
+            case 1: dayName = 'MONDAY'; break;
+            case 2: dayName = 'TUESDAY'; break;
+            case 3: dayName = 'WEDNESDAY'; break;
+            case 4: dayName = 'THURSDAY'; break;
+            case 5: dayName = 'FRIDAY'; break;
+            case 6: dayName = 'SATURDAY'; break;
+        }
 
-    var monthNumber = (month + 1).toString().padStart(2, '0');
+        const monthNumber = (month + 1).toString().padStart(2, '0');
 
-    document.querySelector('.data-day').innerHTML = `${dayName}`;
-    document.querySelector('.data-date').innerHTML = `${date} / ${monthNumber} / ${year}`;
-    document.querySelector('.data-time').innerHTML = time;
-    const greeting = document.querySelector('.small-heading');
+        document.querySelector('.data-day').innerHTML = dayName;
+        document.querySelector('.data-date').innerHTML = `${date} / ${monthNumber} / ${year}`;
+        document.querySelector('.data-time').innerHTML = time;
+        
+        const greeting = document.querySelector('.small-heading');
+        const hour = now.getHours();
 
-    if(time>= '08:00' && time < '12:00') {
-        greeting.innerHTML = 'Good Morning!';
-    }    
-    else if(time >= '12:00' && time < '18:00') {
-        greeting.innerHTML = 'Good Afternoon!';
-    } else if (time >= '18:00' && time < '01:00') {
-        greeting.innerHTML = 'Good Evening!';
-    }
-    else {
-        greeting.innerHTML = 'Good Night!';
+        // Using hour number is more reliable than comparing time strings
+        if (hour >= 8 && hour < 12) {
+            greeting.innerHTML = 'Good Morning!';
+        } else if (hour >= 12 && hour < 18) {
+            greeting.innerHTML = 'Good Afternoon!';
+        } else if (hour >= 18 && hour < 24) {
+            greeting.innerHTML = 'Good Evening!';
+        } else {
+            greeting.innerHTML = 'Good Night!';
+        }
     }
 });
