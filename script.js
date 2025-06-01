@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial update when page loads
     updateDateTime();
     
-    // Update every second (1000 milliseconds)
-    setInterval(updateDateTime, 10000);
+    setInterval(updateDateTime, 100000);
     
     function updateDateTime() {
         const now = new Date();
@@ -47,9 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
             greeting.innerHTML = 'Good Night!';
         }
     }
+
+    document.querySelector('.advisor-button').addEventListener('click', () => {
+        const advisor = document.querySelector('.advisor-banner');
+        advisor.style.animation = 'drop-down 1s forwards';
+
+        advisor.addEventListener('animationend', () => {
+            advisor.style.display = 'none';
+        }, { once: true });
+    });
 });
 
 function switchMode(hour) {
+
     const themes = {
         default: {
             '--background-color': '#E5E0CE',
@@ -70,6 +78,15 @@ function switchMode(hour) {
     // Nacht-Theme zwischen 18 Uhr und 6 Uhr morgens
     if (hour >= 18 || hour < 6) {
         selectedTheme = themes.night;
+        const entries = document.querySelectorAll('.menu-entry a')
+        entries.forEach(entry => {
+            entry.addEventListener('mouseenter', () => {
+                entry.style.color = 'white';
+            });
+            entry.addEventListener('mouseleave', () => {
+                entry.style.color = '';
+            });
+        });
     } else {
         selectedTheme = themes.default;
     }
