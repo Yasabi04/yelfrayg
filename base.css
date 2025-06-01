@@ -95,7 +95,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 20rem;
+    padding: 7rem 0 7rem 20rem;
     width: 70vw;
     max-width: 100rem;
 
@@ -114,7 +114,6 @@ h3 {
         margin-top: 1rem;
         line-height: 1.5;
         text-align: left;
-
         a {
             color: white;
             text-decoration: none;
