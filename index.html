@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./animation.css">
     <title>Portfolio</title>
 </head>
 <body>
@@ -26,10 +27,43 @@
                 <li class="menu-entry"><a href="#04">Contact me!</a></li>
             </ul>
         </aside>
+
+
+
         <h2 class="chapter" id="01">01</h2>
+        <section class = "intro">
+            <h3 class = "intro-heading">Hi!</h3>
+            <p class = "intro-text fade-in-section">my name is Yassin. I'm 21 years old and currently studying <a href="https://www.medieninformatik.th-koeln.de/">media informatics</a> at TH Cologne.</p>
+            <p class="intro-text">
+                <span class="fade-in">I try to </span>
+                <span class="highlight-word">solve problems</span>
+                <span class="fade-in"> people in need actually have - not ones dreamt up in an eco-allotment coffee shop.</span>
+            </p>
+            <p class = "intro-text">Currently focussing on WebDev and socials projects!</p>
+        </section>
+
+
+
         <h2 class="chapter" id="02">02</h2>
-            <h3 class = "small-heading"></h3>
+        <section class = "about">
+            <h3 class = "about-heading">About me</h3>
+            <div class = "my-table">
+                <div class = "my-image" id="1"></div>
+                <div class = "my-image" id="2"></div>
+                <div class = "my-image" id="3"></div>
+                <div class = "my-text" id="1"></div>
+                <div class = "my-text" id="2"></div>
+                <div class = "my-text" id="3"></div>
+            </div>
+        </section>
+
+
+
         <h2 class="chapter" id="03">03</h2>
+        <section class = "projects"></section>
+
+
+
         <h2 class="chapter" id="04">04</h2>
         <section class = "connect">
             <h4 class = "connect-slogan">Ready to start something <span class = "highlight-word">Great</span>?<br>Let's connect!</h4>
@@ -37,12 +71,18 @@
                 <input type="text" name="name" required class = "form-name">
                 <input type="email" name="email" required class = "form-email">
                 <input type="company" name="company" required class = "form-company">
-                <textarea name="message" rows="5" required class = "form-message"></textarea>
-                <button type="submit" class = "form-semd">Senden!</button>
+                <textarea name="message" required class = "form-message"></textarea>
+                <button type="submit" class = "form-send">Senden!</button>
             </form>
         </section>
+        <div class = "advisor-banner">
+            <h4>Visibility</h4>
+            <p>For better accessibility and readability at night, I decided to provide this webside with an automatic Mode switch</p>
+            <button>x</button>
+        </div>
     </main>
     <footer></footer>
     <script src="./script.js"></script>
+    <script src="./fade.js"></script>
 </body>
 </html>

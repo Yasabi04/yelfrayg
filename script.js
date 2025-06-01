@@ -30,11 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.data-date').innerHTML = `${date} / ${monthNumber} / ${year}`;
         document.querySelector('.data-time').innerHTML = time;
         
-        const greeting = document.querySelector('.small-heading');
+        const greeting = document.querySelector('.intro-heading');
         const hour = now.getHours();
+        
+        // Theme basierend auf Uhrzeit wechseln
+        switchMode(hour);
 
         // Using hour number is more reliable than comparing time strings
-        if (hour >= 8 && hour < 12) {
+        if (hour >= 6 && hour < 12) {
             greeting.innerHTML = 'Good Morning!';
         } else if (hour >= 12 && hour < 18) {
             greeting.innerHTML = 'Good Afternoon!';
@@ -45,3 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+function switchMode(hour) {
+    const themes = {
+        default: {
+            '--background-color': '#E5E0CE',
+            '--text-color': '#D38D51',
+            '--chapter-color': '#ded2ba',
+            '--menu-entry-color': '#dcb78f'
+        },
+        night: {
+            '--background-color': '#394770',
+            '--text-color': '#808CB1',
+            '--chapter-color': '#5f6a8b',
+            '--menu-entry-color': '#9ca3b7'
+        }
+    };
+    
+    let selectedTheme;
+    
+    // Nacht-Theme zwischen 18 Uhr und 6 Uhr morgens
+    if (hour >= 18 || hour < 6) {
+        selectedTheme = themes.night;
+    } else {
+        selectedTheme = themes.default;
+    }
+    
+    // Theme anwenden
+    const root = document.documentElement;
+    Object.entries(selectedTheme).forEach(([property, value]) => {
+        root.style.setProperty(property, value);
+    });
+}
