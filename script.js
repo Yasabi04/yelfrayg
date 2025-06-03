@@ -46,14 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.querySelector('.advisor-button').addEventListener('click', () => {
-        const advisor = document.querySelector('.advisor-banner');
-        advisor.style.animation = 'drop-down 1s forwards';
+    const advisorButton = document.querySelector('.advisor-button');
 
-        advisor.addEventListener('animationend', () => {
+    if(advisorButton){
+        const advisor = document.querySelector('.advisor-banner');
+        if(localStorage.getItem('advisorDismissed') === 'true'){
             advisor.style.display = 'none';
-        }, { once: true });
-    });
+        }
+        else {
+            advisorButton.addEventListener('click', () => {
+                localStorage.setItem('advisorDismissed', 'true');
+                advisor.style.animation = 'drop-down 2s forwards';
+
+                advisor.addEventListener('animationend', () => {
+                    advisor.style.display = 'none';
+                }, { once: true })
+            })
+        }
+    }
 });
 
 function switchMode(hour) {
@@ -75,7 +85,6 @@ function switchMode(hour) {
     
     let selectedTheme;
     
-    // Nacht-Theme zwischen 18 Uhr und 6 Uhr morgens
     if (hour >= 18 || hour < 6) {
         selectedTheme = themes.night;
         const entries = document.querySelectorAll('.menu-entry a')

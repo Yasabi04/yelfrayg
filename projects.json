@@ -7,10 +7,17 @@
             "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
         },
         {
+            "title": "Proxy Parcelbox",
+            "description": "Web application for managing and tracking personal projects.",
+            "year": 2024,
+            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
+        }
+    ],
+    "active-projects": [
+        {
             "title": "Project Settle",
             "description": "Web application for translating legal documents, s.a. asylum applications, into other languages.",
             "year": 2025,
             "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
-        }
-    ]
+        }    ]
 }
