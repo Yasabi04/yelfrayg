@@ -1,18 +1,16 @@
 {
     "projects": [
         {
-            "name": "Project Alpha",
-            "description": "A groundbreaking project that aims to revolutionize the industry.",
-            "year": 2023,
-            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"],
-            "image": "./img/V1.0.jpg"
+            "title": "OmniMize",
+            "description": "Web application that optimizes photos in terms of size for web use.",
+            "year": "2024/2025",
+            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
         },
         {
-            "name": "Project Beta",
-            "description": "An innovative project focused on enhancing user experience.",
-            "year": 2022,
-            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"],
-            "image": "./img/V1.0.jpg"
+            "title": "Project Settle",
+            "description": "Web application for translating legal documents, s.a. asylum applications, into other languages.",
+            "year": 2025,
+            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
         }
     ]
 }

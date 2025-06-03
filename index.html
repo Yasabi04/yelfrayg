@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./base.css">
     <link rel="stylesheet" href="./animation.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon-light.jpg">
     <title>Portfolio</title>
 </head>
 <body>
@@ -45,22 +46,34 @@
 
 
         <h2 class="chapter" id="02">02</h2>
-        <section class = "about">
-            <h3 class = "about-heading">About me</h3>
-            <div class = "my-table">
-                <div class = "my-image" id="1"></div>
-                <div class = "my-image" id="2"></div>
-                <div class = "my-image" id="3"></div>
-                <div class = "my-text" id="1"></div>
-                <div class = "my-text" id="2"></div>
-                <div class = "my-text" id="3"></div>
-            </div>
+        <section class = "intro">
+            <h3 class = "intro-heading">About me</h3>
+            <p class = "intro-text fade-in-section">I am a passionate developer with a focus on creating innovative solutions that make a difference. My journey in the tech world has been driven by a desire to learn and grow, and I am always eager to take on new challenges.</p>
         </section>
 
 
 
+
         <h2 class="chapter" id="03">03</h2>
-        <section class = "projects"></section>
+        <section class = "intro">
+            <h3 class = "intro-heading">My latest projects</h3>
+            <p class="intro-text">I have blablabla</p>
+            <div class = "project-container">
+
+                <div class = "single-project">
+                    <h3 class="project-title">Titel</h3>
+                    <div class = "project-year">2024</div>
+                    <div class="project-information">
+                        <p class="project-description">Lorem ipsum dolor</p>
+                        <ul class="tech-stack">
+                            <li class = "tech" id="1">HTML</li>
+                            <li class = "tech" id="2">CSS</li>
+                            <li class = "tech" id="3">JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -77,12 +90,12 @@
         </section>
         <div class = "advisor-banner">
             <h4 class = "advisor-heading">Note</h4>
-            <p class = "advisor-text">For better accessibility and readability at night, I decided to provide this webside with an automatic Mode switch.</p>
+            <p class = "advisor-text">For better accessibility and readability at night, I decided to provide this website with an automatic color switch.</p>
             <button class = "advisor-button">X</button>
         </div>
     </main>
     <footer></footer>
     <script src="./script.js"></script>
-    <script src="./fade.js"></script>
+    <script src="./fetch.js"></script>
 </body>
 </html>

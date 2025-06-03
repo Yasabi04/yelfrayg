@@ -166,6 +166,93 @@ h3 {
     }
 }
 
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35vh, 1fr)); /* Drei gleich große Spalten */
+    gap: 2rem; /* Abstand zwischen den Projekten */
+    width: 70vw; 
+    margin: 0 auto; /* Zentrieren des Containers */
+    padding: 2rem 0;
+}
+
+.single-project{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    background-color: var(--chapter-color);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+
+    .project-title {
+        color: black;
+        font-size: 2.5rem;
+    }
+
+    .project-year {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: black;
+        margin-top: 0.5rem;
+    }
+
+    .project-information {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--chapter-color);
+        box-sizing: border-box;
+        transform: translateX(-95%);
+        transition: transform 0.5s ease-in-out;
+        border-right: 20px solid var(--text-color);
+        
+        .project-description {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: black;
+            margin-top: 1rem;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            /* overflow: hidden; */
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            list-style-type: none;
+            .tech {
+                background-color: var(--background-color);
+                color: var(--text-color);
+                padding: 0.5rem 1rem;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.single-project:hover {
+    .project-information {
+        transform: translateX(0); 
+    }
+    .project-title, .project-year {
+        opacity: 0.5;
+    }
+}
+
+
+
+
+
 .connect {
     display: flex;
     justify-content: center;
