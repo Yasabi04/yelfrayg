@@ -114,18 +114,13 @@ h3 {
         margin-top: 1rem;
         line-height: 1.5;
         text-align: left;
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-        }
 
-        .highlight-word {
+        .highlight-word, a {
+            text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
             font-size: 2rem
         }
-
     }
 }
 
@@ -199,6 +194,14 @@ h3 {
         color: white;
         margin-top: 0.5rem;
     }
+
+    
+    .in-dev {
+        padding: 0.5rem;
+        background-color: rgba(193, 43, 43, 0.5);
+
+    }
+
 
     .project-information {
         position: absolute;
@@ -275,7 +278,6 @@ h3 {
         color: white;
         font-size: 2.5rem;
         font-family: var(--heading-font);
-        font-style: italic;
         margin-right: 0.5rem;   
     }
 }

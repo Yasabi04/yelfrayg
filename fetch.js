@@ -7,11 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const collectProjects = data.projects;
             
             collectProjects.forEach(project => {
+                const isYearNumber = !isNaN(project.year);
                 const projectElement = document.createElement('div');
                 projectElement.classList.add('single-project'); 
                 projectElement.innerHTML = `
                     <h3 class="project-title">${project.title}</h3>
-                    <div class="project-year">${project.year}</div>
+                    ${isYearNumber ? 
+                        `<div class="project-year">${project.year}</div>` 
+                        : `<div class="project-year in-dev">${project.year}</div>`
+                    }
                     <div class="project-information">
                         <p class="project-description">${project.description}</p>
                         <ul class="tech-stack">
