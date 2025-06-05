@@ -46,7 +46,7 @@ h3 {
 .menu {
     position: fixed;
     bottom: 10vh;
-    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -134,7 +134,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 20rem;
+    padding-left: 15rem;
     width: 70vw;
     max-width: 100rem;
 
@@ -165,9 +165,8 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(37vh, 1fr)); /* Drei gleich große Spalten */
     gap: 2rem; /* Abstand zwischen den Projekten */
-    width: 70vw; 
-    margin: 0 auto; /* Zentrieren des Containers */
-    padding: 2rem 0;
+    width: 50vw; 
+    /* Karten werden links angebunden */
 }
 
 .single-project{
@@ -199,7 +198,6 @@ h3 {
     .in-dev {
         padding: 0.5rem;
         background-color: rgba(193, 43, 43, 0.5);
-
     }
 
 
@@ -284,16 +282,17 @@ h3 {
 
 .contact-form {
     display: grid;
-    width: 70vw;
+    width: 60vw;
     max-width: 100rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     grid-template-areas: 
-        "name email company"
-        "message message message"
-        "submit submit submit"
+        "name message message"
+        "email message message"
+        "company submit submit"
     ;
     
+    /* Grundlegende Stilregeln für alle Formularelemente */
     [class*="form-"] {
         font-size: 1.5rem;
         font-weight: 600;
@@ -302,8 +301,15 @@ h3 {
         border-radius: 0.5rem;
         background-color: transparent;
         border: 2px solid var(--text-color);
+        width: 100%;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+        }
     }
     
+    /* Grid-Bereich Zuweisungen */
     .form-name {
         grid-area: name;
     }
@@ -319,24 +325,20 @@ h3 {
     .form-message {
         grid-area: message;
         resize: vertical;
-        width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
+        min-height: 150px;
     }
     
-    .form-send {
+    .form-submit {
         grid-area: submit;
-        color: white;
+        background-color: var(--chapter-color);
+        color: var(--background-color);
         border: none;
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
-        font-weight: 600;
         cursor: pointer;
-        transition: 0.2s all;
+        transition: all 0.3s ease;
         
         &:hover {
+            color: white;
             background-color: var(--text-color);
-            transition: 0.2s all;
         }
     }
 }

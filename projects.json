@@ -4,13 +4,13 @@
             "title": "OmniMize",
             "description": "Web application that optimizes photos in terms of size for web use.",
             "year": 2024,
-            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
+            "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "MailerSend", "Sharp"]
         },
         {
             "title": "Proxy Parcelbox",
             "description": "Web application for managing and tracking personal projects.",
             "year": 2024,
-            "technologies": ["HTML", "CSS", "JavaScript", "Node.js"]
+            "technologies": ["HTML", "CSS", "JavaScript", "PostgreSQL", "MailerSend"]
         },
         {
             "title": "Settle",
