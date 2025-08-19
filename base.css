@@ -57,27 +57,42 @@ h3 {
     font-weight: 600;
     list-style-type: none;
     counter-reset: menu-counter 0;
+    transform: translateX(calc(100% - 4.5rem)); /* Verschieben nach rechts, nur 3rem sichtbar lassen */
+    transition: transform 0.6s ease; /* Für Animation beim Hover */
+    
     .menu-entry {
+        width: 100%;
+        position: relative;
         a {
             color: var(--menu-entry-color);
             text-decoration: none;
             list-style-type: none;
             transition: 0.2s all;
+            padding-left: 3rem; /* Raum für die Ziffern schaffen */
+            display: block;
+            margin-left: 1rem;
+            white-space: nowrap; /* Verhindert Zeilenumbruch */
         }
-    } 
-    .menu-entry:hover {
-        a {
-            color: var(--text-color);
-            cursor: pointer;
-            transition: 0.2s all;
-        }
-    }
-    .menu-entry {
+        
         a::before {
             counter-increment: menu-counter;
             content: "0" counter(menu-counter) " ";
+            position: absolute; /* Absolute Positionierung */
+            left: 0; /* Links ausrichten */
+            width: 3rem; /* Feste Breite für die Ziffern */
+            text-align: center; /* Zentrieren der Ziffern */
         }
     }
+    
+    &:hover {
+        transform: translateX(0); /* Beim Hover komplett einblenden */
+    }
+}
+
+/* Der hover-Effekt für die Menüpunkte */
+.menu-entry:hover a {
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 .chapter {
@@ -98,6 +113,7 @@ h3 {
     padding: 7rem 0 7rem 20rem;
     width: 70vw;
     max-width: 100rem;
+    animation-timeline: view(30%);
 
     .intro-heading{
         font-family: var(--heading-font);
@@ -111,8 +127,8 @@ h3 {
         font-size: 1.5rem;
         font-weight: 300;
         color: var(--text-color);
-        margin-top: 1rem;
-        line-height: 1.5;
+        margin-top: 0.5rem;
+        line-height: 1.3;
         text-align: left;
 
         .highlight-word, a {
@@ -165,8 +181,8 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(37vh, 1fr)); /* Drei gleich große Spalten */
     gap: 2rem; /* Abstand zwischen den Projekten */
-    width: 50vw; 
-    /* Karten werden links angebunden */
+    width: 50vw;
+    padding-bottom: 2rem;
 }
 
 .single-project{
@@ -278,6 +294,13 @@ h3 {
         font-family: var(--heading-font);
         margin-right: 0.5rem;   
     }
+
+    .connect-slogan {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .contact-form {
@@ -298,14 +321,19 @@ h3 {
         font-weight: 600;
         color: var(--text-color);
         padding: 1rem;
-        border-radius: 0.5rem;
         background-color: transparent;
-        border: 2px solid var(--text-color);
+        border: none;
+        border-left: 0.25rem solid var(--text-color);
+        border-bottom: 0.25rem solid var(--background-color);
         width: 100%;
         box-sizing: border-box;
+        transition: 0.2s all;
 
         &:focus {
             outline: none;
+            border-left: 0.25rem solid var(--background-color);
+            border-bottom: 0.25rem solid var(--text-color);
+            border-left: none;
         }
     }
     
