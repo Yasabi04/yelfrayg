@@ -4,19 +4,22 @@
             "title": "OmniMize",
             "description": "Web application that optimizes photos in terms of size for web use.",
             "year": 2024,
-            "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "MailerSend", "Sharp"]
+            "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "MailerSend", "Sharp"],
+            "link": "#"
         },
         {
             "title": "Proxy Parcelbox",
             "description": "Web application for managing and tracking personal projects.",
             "year": 2024,
-            "technologies": ["HTML", "CSS", "JavaScript", "PostgreSQL", "MailerSend"]
+            "technologies": ["HTML", "CSS", "JavaScript", "PostgreSQL", "MailerSend", "Docker"],
+            "link": "#"
         },
         {
-            "title": "Settle",
+            "title": "SETTLE",
             "description": "Web application for translating legal documents into diff. languages.",
             "year": "in development",
-            "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "DeepL API"]
+            "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "DeepL", "Prisma Postgres", "Ollama", "Docker"],
+            "link": "https://yasabi04.github.io/praxisprojekt-ss-2025/Prototyp/frontend/html/?lang=en"
         }
     ]
 }
