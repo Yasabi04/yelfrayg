@@ -5,7 +5,7 @@
             "description": "Web application that optimizes photos in terms of size for web use.",
             "year": 2024,
             "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "MailerSend", "Sharp"],
-            "link": "#"
+            "link": "https://github.com/MaximilianKellner/ep-2024-web-development"
         },
         {
             "title": "Proxy Parcelbox",
@@ -17,9 +17,16 @@
         {
             "title": "SETTLE",
             "description": "Web application for translating legal documents into diff. languages.",
-            "year": "in development",
+            "year": 2025,
             "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "DeepL", "Prisma Postgres", "Ollama", "Docker"],
             "link": "https://yasabi04.github.io/praxisprojekt-ss-2025/Prototyp/frontend/html/?lang=en"
+        },
+        {
+            "title": "Bachelor",
+            "description": "Let's see what's going to happen :)",
+            "year": "in development",
+            "technologies": [],
+            "link": "#"
         }
     ]
 }

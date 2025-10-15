@@ -44,6 +44,7 @@ h3 {
 }
 
 .menu {
+    backdrop-filter: blur(5px);
     position: fixed;
     bottom: 10vh;
     right: 0;
@@ -137,13 +138,28 @@ h3 {
             font-weight: 600;
             font-size: 2rem
         }
+
+        .link {
+            position: relative;
+        }
+
+        .link::after {
+            position: absolute;
+            content: '';
+            bottom: calc(-1*0.25rem);
+            left: 0;
+            width: 0;
+            height: 0.125rem;
+            background-color: white;
+            animation: link 1s linear;
+        }
+
+        .link::after:hover {
+            width: 100%;
+            animation: link 1s linear;
+        }
     }
 }
-
-
-
-
-
 
 .about {
     display: flex;
@@ -179,7 +195,7 @@ h3 {
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(37vh, 1fr)); /* Drei gleich große Spalten */
+    grid-template-columns: repeat(auto-fill, minmax(30%, 3fr)); /* Drei gleich große Spalten */
     gap: 2rem; /* Abstand zwischen den Projekten */
     width: 50vw;
     padding-bottom: 2rem;
@@ -389,7 +405,6 @@ h3 {
     }
 }
 
-
 .advisor-banner{
     position: sticky;
     bottom: 0;
@@ -437,4 +452,43 @@ h3 {
             transition: 0.2s all;
         }
     }
+}
+
+/* --- Fix: working CSS for link hover animation (browsers need flat selectors) --- */
+/* The file contains nested (Sass-like) blocks which are ignored by the browser.
+   These explicit selectors ensure the underline animation works. */
+.intro-text .highlight-word,
+.intro-text a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.link {
+    position: relative;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.intro-text .link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.125rem;
+    width: 0;
+    background-color: white;
+    transition: width 300ms ease; /* animate the width */
+}
+
+/* apply expansion when parent is hovered (pseudo-element can't reliably receive :hover) */
+.intro-text .link:hover::after {
+    width: 100%;
+}
+
+/* Accessibility: focus state for keyboard users */
+.intro-text .link:focus {
+    outline: 2px dashed rgba(255,255,255,0.6);
+    outline-offset: 4px;
 }
