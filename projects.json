@@ -4,6 +4,7 @@
             "title": "OmniMize",
             "description": "Web application that optimizes photos in terms of size for web use.",
             "year": 2024,
+            "image": "/img/omnimize.png",
             "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "MailerSend", "Sharp"],
             "link": "https://github.com/MaximilianKellner/ep-2024-web-development"
         },
@@ -18,13 +19,15 @@
             "title": "SETTLE",
             "description": "Web application for translating legal documents into diff. languages.",
             "year": 2025,
+            "image": "/img/photo-log-yassin-el-fraygui-2025-10-16-08.png",
             "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "DeepL", "Prisma Postgres", "Ollama", "Docker"],
-            "link": "https://yasabi04.github.io/praxisprojekt-ss-2025/Prototyp/frontend/html/?lang=en"
+            "link": "https://yasabi04.github.io/praxisprojekt-ss-2025/Prototyp/frontend/html/"
         },
         {
             "title": "Bachelor",
             "description": "Let's see what's going to happen :)",
             "year": "in development",
+            "image": "/img/temp-photo.jfif",
             "technologies": [],
             "link": "#"
         }

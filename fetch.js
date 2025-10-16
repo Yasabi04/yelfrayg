@@ -1,46 +1,51 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     const projectContainer = document.querySelector(".project-container");
+document.addEventListener("DOMContentLoaded", () => {
+    const projectContainer = document.querySelector(".project-container");
 
-//     fetch("./projects.json")
-//         .then((response) => response.json())
-//         .then((data) => {
-//             const collectProjects = data.projects;
+    fetch("./projects.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const collectProjects = data.projects;
+            let counter = 0;
 
-//             collectProjects.forEach((project) => {
-//                 const isYearNumber = !isNaN(project.year);
-//                 const projectElement = document.createElement("a");
-//                 projectElement.href = project.link;
-//                 projectElement.classList.add("single-project");
-//                 projectElement.innerHTML = `
-//                     <h3 class="project-title">${project.title}</h3>
-//                     ${
-//                         isYearNumber
-//                             ? `<div class="project-year">${project.year}</div>`
-//                             : `<div class="project-year in-dev">${project.year}</div>`
-//                     }
-//                     <div class="project-information">
-//                         <p class="project-description">${
-//                             project.description
-//                         }</p>
-//                         <ul class="tech-stack">
-//                             ${project.technologies
-//                                 .map((tech) => `<li class="tech">${tech}</li>`)
-//                                 .join("")}
-//                         </ul>
-//                     </div>
-//                 `;
-//                 projectContainer.appendChild(projectElement);
-//             });
-//         })
-//         .catch((error) => console.error("Error fetching projects:", error));
-// });
+            collectProjects.forEach((project) => {
+                counter++
+                const projectElement = document.createElement("div");
+                // projectElement.href = project.link;
+                projectElement.classList.add("project");
+                projectElement.innerHTML = `
+                    <p class="p-number">${counter}</p>
+                    <section class="p-section">
+                        <div class="p-img-wrapper">
+                            <img
+                                src="${project.image}"
+                                alt="Inhalt wird hier beschrieben."
+                                class="p-img"
+                            />
+                        </div>
+                        <div class="text-container">
+                            <h2 class="p-heading">${project.title}</h2>
+                            <p class="p-text">${project.description}</p>
+                            <ul class="p-tech-stack">
+                                ${project.technologies.map(tech => `<li class="p-tech">${tech}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </section>
+                `;
+                projectContainer.appendChild(projectElement);
+            });
+                    cardToggle()        
 
-document.addEventListener('DOMContentLoaded', () => {
-    const allProjects = document.querySelectorAll(".project")
-
-    allProjects.forEach(project => {
-        project.addEventListener('click', () => {
-            project.classList.toggle('full')
         })
+        .catch((error) => console.error("Error fetching projects:", error));
+});
+
+function cardToggle(){
+    const allProjects = document.querySelectorAll(".project");
+
+    allProjects.forEach((project) => {
+        project.addEventListener("click", () => {
+            project.classList.toggle("full");
+        });
     });
-})
+}
+    
